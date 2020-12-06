@@ -1,7 +1,7 @@
 <template>
+  <h1>Signup Form</h1>
   <form>
-    <label for="email">Email: </label>
-    <input type="email" required />
+    <label for="email">Email: </label> <input type="email" required />
   </form>
 </template>
 

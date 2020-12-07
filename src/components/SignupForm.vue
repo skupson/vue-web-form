@@ -1,12 +1,20 @@
 <template>
   <h1>Signup Form</h1>
   <form>
-    <label for="email">Email: </label> <input type="email" required />
+    <input type="email" placeholder="Email" required v-model="email" />
+    <input type="password" placeholder="Password" required v-model="password" />
   </form>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+};
 </script>
 
 <style>

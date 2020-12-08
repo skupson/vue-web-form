@@ -12,13 +12,28 @@
     </div>
     <div class="input">
       <i class="fas fa-key"></i>
-      <i class="fas fa-eye show-password"></i>
+      <i
+        class="fas fa-eye show-password"
+        v-on:click="toggleShowPassword"
+        v-if="!showPassword"
+      ></i>
+      <i
+        class="fas fa-eye-slash show-password"
+        v-on:click="toggleShowPassword"
+        v-if="showPassword"
+      ></i>
       <input
         type="password"
         placeholder="Password"
         required
         v-model="password"
       />
+    </div>
+    <div class="input password-strength">
+      <div class="password-srength-indicator"></div>
+      <div class="password-srength-indicator"></div>
+      <div class="password-srength-indicator"></div>
+      <div class="password-srength-indicator"></div>
     </div>
     <div class="input">
       <i class="fas fa-check"></i>
@@ -48,7 +63,13 @@ export default {
       confirmPassword: "",
       role: "",
       terms: false,
+      showPassword: false,
     };
+  },
+  methods: {
+    toggleShowPassword() {
+      this.showPassword = !this.showPassword;
+    },
   },
 };
 </script>

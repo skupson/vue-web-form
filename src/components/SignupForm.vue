@@ -1,8 +1,39 @@
 <template>
   <h1>Signup Form</h1>
+  <h2>Start using this webapp today!</h2>
   <form>
-    <input type="email" placeholder="Email" required v-model="email" />
-    <input type="password" placeholder="Password" required v-model="password" />
+    <div class="input">
+      <i class="fas fa-user"></i>
+      <input type="text" placeholder="Username" required v-model="username" />
+    </div>
+    <div class="input">
+      <i class="fas fa-envelope"></i>
+      <input type="email" placeholder="Email" required v-model="email" />
+    </div>
+    <div class="input">
+      <i class="fas fa-key"></i>
+      <input
+        type="password"
+        placeholder="Password"
+        required
+        v-model="password"
+      />
+    </div>
+    <div class="input">
+      <i class="fas fa-check"></i>
+      <input
+        type="password"
+        placeholder="Confirm password"
+        required
+        v-model="confirmPassword"
+      />
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" required v-model="terms" />
+      <p>Acccept terms and conditions</p>
+    </div>
+    <button>Signup</button>
   </form>
 </template>
 
@@ -10,8 +41,12 @@
 export default {
   data() {
     return {
+      username: "",
       email: "",
       password: "",
+      confirmPassword: "",
+      role: "",
+      terms: false,
     };
   },
 };

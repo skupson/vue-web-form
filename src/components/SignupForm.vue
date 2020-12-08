@@ -1,7 +1,7 @@
 <template>
   <h1>Signup Form</h1>
   <h2>Start using this webapp today!</h2>
-  <form>
+  <form v-on:submit.prevent>
     <div class="input">
       <i class="fas fa-user"></i>
       <input type="text" placeholder="Username" required v-model="username" />

@@ -12,6 +12,7 @@
     </div>
     <div class="input">
       <i class="fas fa-key"></i>
+      <i class="fas fa-eye show-password"></i>
       <input
         type="password"
         placeholder="Password"
@@ -29,7 +30,7 @@
       />
     </div>
 
-    <div class="terms">
+    <div class="input terms">
       <input type="checkbox" required v-model="terms" />
       <p>Acccept terms and conditions</p>
     </div>

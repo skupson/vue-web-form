@@ -23,6 +23,7 @@
         v-if="showPassword"
       ></i>
       <input
+        ref="passwordInput"
         type="password"
         placeholder="Password"
         required
@@ -65,6 +66,11 @@ export default {
       terms: false,
       showPassword: false,
     };
+  },
+  updated(){
+    this.showPassword ?
+      this.$refs.passwordInput.type="text" : this.$refs.passwordInput.type="password"
+  
   },
   methods: {
     toggleShowPassword() {

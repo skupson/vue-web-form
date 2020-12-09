@@ -157,6 +157,11 @@ button:hover {
   border: 1px solid var(--primary-color);
 }
 
+button:active,
+button:focus {
+  outline: 0;
+}
+
 .warning {
   border-color: var(--warning-color) !important;
 }

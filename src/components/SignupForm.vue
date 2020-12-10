@@ -1,7 +1,7 @@
 <template>
   <h1>Signup Form</h1>
   <h2>Start using this webapp today!</h2>
-  <form v-on:submit.prevent>
+  <form v-on:submit.prevent="handleSubmit">
     <div class="input">
       <i class="fas fa-user"></i>
       <input type="text" placeholder="Username" required v-model="username" />
@@ -45,6 +45,7 @@
         v-model="confirmPassword"
       />
     </div>
+    <p class="error-message" v-if="passwordError">{{ passwordError }}</p>
 
     <div class="input terms">
       <input type="checkbox" required v-model="terms" />
@@ -63,18 +64,26 @@ export default {
       password: "",
       confirmPassword: "",
       role: "",
+      passwordError: "",
       terms: false,
       showPassword: false,
+      passwordStrength: 0,
     };
   },
-  updated(){
-    this.showPassword ?
-      this.$refs.passwordInput.type="text" : this.$refs.passwordInput.type="password"
-  
+  updated() {
+    this.showPassword
+      ? (this.$refs.passwordInput.type = "text")
+      : (this.$refs.passwordInput.type = "password");
   },
   methods: {
     toggleShowPassword() {
       this.showPassword = !this.showPassword;
+    },
+    handleSubmit() {
+      // validate password
+      this.passwordError =
+        this.password === this.confirmPassword ? "" : "Passwords doesn't match";
+      this.password.test();
     },
   },
 };
